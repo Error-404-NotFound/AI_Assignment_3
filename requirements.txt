@@ -1,0 +1,12 @@
+gymnasium
+matplotlib
+networkx
+gym
+numpy
+pygame
+imageio
+gym-chess
+python-chess
+cairosvg
+pillow
+opencv-python

@@ -1,0 +1,441 @@
+Game Start!
+Player Side (for reference): White
+Algorithm: Minimax
+========================================
+r n b q k b n r
+p p p p p p p p
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . . N . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 1: g1f3
+Evaluation: -1.799999999999996
+Move by: White
+
+========================================
+
+r n b q k b n r
+p p p p p p p .
+. . . . . . . p
+. . . . . . . .
+. . . . . . . .
+. . . . . N . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 2: h7h6
+Evaluation: 2.9000000000000057
+Move by: Black
+
+========================================
+
+r n b q k b n r
+p p p p p p p .
+. . . . . . . p
+. . . . N . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 3: f3e5
+Evaluation: -0.5499999999999952
+Move by: White
+
+========================================
+
+r n b q k b n r
+p p p p p . p .
+. . . . . p . p
+. . . . N . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 4: f7f6
+Evaluation: 3.9500000000000073
+Move by: Black
+
+========================================
+
+r n b q k b n r
+p p p p p . p .
+. . . . . p N p
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 5: e5g6
+Evaluation: 2.249999999999999
+Move by: White
+
+========================================
+
+r n b q k b n r
+p p . p p . p .
+. . . . . p N p
+. . p . . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 6: c7c5
+Evaluation: 3.800000000000003
+Move by: Black
+
+========================================
+
+r n b q k b n N
+p p . p p . p .
+. . . . . p . p
+. . p . . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 7: g6h8
+Evaluation: 4.050000000000001
+Move by: White
+
+========================================
+
+r n b q k b n N
+p . . p p . p .
+. p . . . p . p
+. . p . . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 8: b7b6
+Evaluation: 8.550000000000006
+Move by: Black
+
+========================================
+
+r n b q k b n .
+p . . p p . p .
+. p . . . p N p
+. . p . . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 9: h8g6
+Evaluation: 7.1499999999999995
+Move by: White
+
+========================================
+
+r n b q k b n .
+. . . p p . p .
+p p . . . p N p
+. . p . . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R N B Q K B . R
+
+Move 10: a7a6
+Evaluation: 9.450000000000005
+Move by: Black
+
+========================================
+
+r n b q k b n .
+. . . p p . p .
+p p . . . p N p
+. . p . . . . .
+. . . . . . . .
+. . N . . . . .
+P P P P P P P P
+R . B Q K B . R
+
+Move 11: b1c3
+Evaluation: 8.049999999999992
+Move by: White
+
+========================================
+
+. n b q k b n .
+r . . p p . p .
+p p . . . p N p
+. . p . . . . .
+. . . . . . . .
+. . N . . . . .
+P P P P P P P P
+R . B Q K B . R
+
+Move 12: a8a7
+Evaluation: 10.399999999999993
+Move by: Black
+
+========================================
+
+. n b q k b n .
+r . . p p . p .
+p p . . . p N p
+. . p N . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R . B Q K B . R
+
+Move 13: c3d5
+Evaluation: 8.799999999999992
+Move by: White
+
+========================================
+
+. n b q k b n .
+r . . . p . p .
+p p . p . p N p
+. . p N . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R . B Q K B . R
+
+Move 14: d7d6
+Evaluation: 11.299999999999995
+Move by: Black
+
+========================================
+
+. n b q k b n .
+r . . . p . p .
+p p . p . p N p
+. . p N . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R . B Q K B R .
+
+Move 15: h1g1
+Evaluation: 8.79999999999999
+Move by: White
+
+========================================
+
+. n . q k b n .
+r . . b p . p .
+p p . p . p N p
+. . p N . . . .
+. . . . . . . .
+. . . . . . . .
+P P P P P P P P
+R . B Q K B R .
+
+Move 16: c8d7
+Evaluation: 11.399999999999997
+Move by: Black
+
+========================================
+
+. n . q k b n .
+r . . b p . p .
+p p . p . p N p
+. . p N . . . .
+. . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B Q K B R .
+
+Move 17: e2e4
+Evaluation: 8.79999999999999
+Move by: White
+
+========================================
+
+. n . q k b n .
+r . . b . . p .
+p p . p p p N p
+. . p N . . . .
+. . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B Q K B R .
+
+Move 18: e7e6
+Evaluation: 12.349999999999996
+Move by: Black
+
+========================================
+
+. n . q k b n .
+r . . b . . p .
+p p . p p p N p
+. . p . . . . .
+. . . . P . . .
+. . N . . . . .
+P P P P . P P P
+R . B Q K B R .
+
+Move 19: d5c3
+Evaluation: 8.349999999999994
+Move by: White
+
+========================================
+
+. n . q k b n .
+r . . . . . p .
+p p . p p p N p
+. . p . . . . .
+b . . . P . . .
+. . N . . . . .
+P P P P . P P P
+R . B Q K B R .
+
+Move 20: d7a4
+Evaluation: 11.450000000000005
+Move by: Black
+
+========================================
+
+. n . q k b n .
+r . . . . . p .
+p p . p p p N p
+. . p . . . . .
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B Q K B R .
+
+Move 21: c3a4
+Evaluation: 10.799999999999999
+Move by: White
+
+========================================
+
+. n . q k b n .
+. r . . . . p .
+p p . p p p N p
+. . p . . . . .
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B Q K B R .
+
+Move 22: a7b7
+Evaluation: 14.45
+Move by: Black
+
+========================================
+
+. n . q k b n .
+. r . . . . p .
+p p . p p p N p
+. . p . . . . Q
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B . K B R .
+
+Move 23: d1h5
+Evaluation: 12.749999999999998
+Move by: White
+
+========================================
+
+. n . q k . n .
+. r . . b . p .
+p p . p p p N p
+. . p . . . . Q
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B . K B R .
+
+Move 24: f8e7
+Evaluation: 15.149999999999997
+Move by: Black
+
+========================================
+
+. n . q k . n .
+. r . . b . p .
+p p . p p p . p
+. . p . N . . Q
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B . K B R .
+
+Move 25: g6e5
+Evaluation: 13.349999999999994
+Move by: White
+
+========================================
+
+. n . q k . n .
+. r . . b . . .
+p p . p p p p p
+. . p . N . . Q
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B . K B R .
+
+Move 26: g7g6
+Evaluation: 15.699999999999994
+Move by: Black
+
+========================================
+
+. n . q k . n .
+. r . . b . . .
+p p . p p p Q p
+. . p . N . . .
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B . K B R .
+
+Move 27: h5g6
+Evaluation: inf
+Move by: White
+
+========================================
+
+. n . q . k n .
+. r . . b . . .
+p p . p p p Q p
+. . p . N . . .
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B . K B R .
+
+Move 28: e8f8
+Evaluation: 10.399999999999991
+Move by: Black
+
+========================================
+
+. n . q . k n .
+. r . . b Q . .
+p p . p p p . p
+. . p . N . . .
+N . . . P . . .
+. . . . . . . .
+P P P P . P P P
+R . B . K B R .
+
+Move 29: g6f7
+Evaluation: inf
+Move by: White
+
+========================================
+
+Game over! Result: 1-0
+Winner: White
