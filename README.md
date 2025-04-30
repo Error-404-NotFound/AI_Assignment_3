@@ -33,13 +33,17 @@ python -m venv AI
 >```bash
 >AI\Scripts\activate.bat
 >```
-5. Install dependencies
+5. Install Setuptools
+```bash
+pip install setuptools
+```
+6. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-6. Run main.py
+7. Run main.py
 ```bash
-python main.py
+python play.py
 ```
 ## Implemented Algorithms
 
