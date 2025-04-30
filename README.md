@@ -1,6 +1,6 @@
 # Spring_2025_AI_Assignment_3
 
-This repository contains implementations of classical search and optimization algorithms applied to various environments including Frozen Lake and the Traveling Salesman Problem (TSP). Visualizations and performance metrics are also provided to analyze and compare the efficiency of each method.
+This repository contains the implementation of Minimax and Alpha-Beta Pruning algorithms applied to the game of Chess using the gym-chess environment. It also includes automated gameplay simulations, move-by-move board visualizations, and final game outcome reporting.
 
 ## Contributors:
 - CS22B028 Johri Aniket Manish
@@ -43,107 +43,79 @@ pip install -r requirements.txt
 ```
 7. Run main.py
 ```bash
-python play.py
+python play_chess.py --depth <k-ary tree depth> --algo <['minimax', 'alphabeta'] (default='alphabeta')> --player_color <['white', 'black'] (default='white')>
 ```
 ## Implemented Algorithms
 
-- **DFBnB (Depth-First Branch and Bound)**  
-  Efficient tree-based search for pathfinding in environments like Frozen Lake.
+- **Minimax**  
+  A classic decision rule for minimizing the possible loss while maximizing the minimum gain. Used for perfect-information games like Chess.
 
-- **IDA\*** (Iterative Deepening A*)  
-  Combines depth-first and heuristic search to balance memory and performance.
-
-- **Hill Climbing**  
-  Greedy optimization approach for improving tour cost in TSP.
-
-- **Simulated Annealing**  
-  Probabilistic optimization technique for escaping local minima in TSP.
+- **Alpha-Beta Pruning** 
+  An optimized version of Minimax that skips evaluating branches that cannot possibly influence the final decision, drastically reducing computation time.
+  
 
 ## Environments
 
-- **Frozen Lake**  
-  Grid world used to test search algorithms like DFBnB and IDA*. [Frozen Lake](https://gymnasium.farama.org/environments/toy_text/frozen_lake/) environment is used for these algorithms.
-
-- **Traveling Salesman Problem (TSP)**  
-  Custom TSP environment from [VRP-GYM](https://github.com/kevin-schumann/VRP-GYM) is used for optimization algorithms like Hill Climbing and Simulated Annealing.
+- **gym-chess**  
+  A reinforcement learning environment built on the python-chess library that simulates legal chess gameplay. Used for AI vs AI simulations. [Chess](https://github.com/iamlucaswolf/gym-chess) environment is used for these algorithms.
  
 ## Project Structure
 
 ```bash
 .
-├── results/
-│   ├── average_search_times.png
-│   ├── dfbnb_frozenlake.gif
-│   ├── hc_tour.gif
-│   ├── hill_climb_costs.png
-│   ├── hill_climb_simulation_across_different_iterations.gif
-│   ├── ida_star_frozenlake.gif
-│   ├── sa_tour.gif
-│   ├── search_times_plot.png
-│   ├── simulated_annealing_costs.png
-│   ├── simulated_annealing_simulation_across_different_iterations.gif
-│   └── times_for_hc_and_sa.png
-├── search_algo/
+├── algorithms/
 │   ├── __init__.py
-│   ├── dfbnb.py
-│   ├── helpers.py
-│   ├── hill_climb.py
-│   ├── ida_star.py
-│   └── simulated_annealing.py
+│   ├── abpruning.py
+│   └── minimax.py
 ├── .gitignore
+├── agent.py
+├── AI_Assignment_3.pptx
+├── alphabeta_chess_game.gif
+├── minimax_chess_game.gif
+├── play_chess.py
 ├── README.md
-├── environment.py
-├── main.py
 ├── requirements.txt
+├── user_white_algo_alphabeta_depth_3.txt
+├── user_white_algo_minimax_depth_3.txt
 └── utils.py
 ```
 
 ## Visualizations
 
-All results and plots are stored in the `results/` directory:
-- `*_costs.png`: Cost progression plots for TSP solutions.
-- `*_tour.gif`: Animation of tour progression.
-- `*_frozenlake.gif`: Search exploration animations on Frozen Lake.
-- `*_simulation_across_different_iterations.gif`: Comparative visualizations over iterations.
-- `search_times_plot.png`, `average_search_times.png`, `times_for_hc_and_sa.png`: Time analysis of different algorithms.
+- **Minimax**  
+![Minimax Chess Gameplay](minimax_chess_game.gif)
 
-## search_algo/ – Core Algorithm Implementations
+- **Alpha-Beta Pruning**  
+![Alphabeta Chess Gameplay](alphabeta_chess_game.gif)
+
+## algorithms/ – Core Algorithm Implementations
 
 This directory contains the core logic for all the search and optimization algorithms implemented in the project. Each file corresponds to a specific algorithm or shared functionality.
 
 ### File Descriptions
 
-- **`dfbnb.py`**  
-  Implements the **Depth-First Branch and Bound (DFBnB)** algorithm, a tree-based search technique that prunes paths exceeding the current best-known solution. Used primarily for solving navigation problems like Frozen Lake.
+- **`minimax.py`**  
+  Implements the Minimax algorithm, a classical decision-making algorithm used in two-player turn-based games like Chess. It simulates all possible moves to a given depth, assuming both players play optimally, and chooses the move that maximizes the player's minimum gain. Best suited for small game trees or low depths due to its exhaustive nature.
 
-- **`ida_star.py`**  
-  Implements the **Iterative Deepening A*** (**IDA\***), which combines the space efficiency of depth-first search with the optimality and heuristics of A*. Suited for large search spaces where A* is memory-intensive.
-
-- **`hill_climb.py`**  
-  Contains the **Hill Climbing** algorithm, a local search method that iteratively improves a solution by exploring its neighbors. Applied to the Traveling Salesman Problem (TSP) to minimize tour cost.
-
-- **`simulated_annealing.py`**  
-  Implements **Simulated Annealing**, a probabilistic algorithm inspired by the annealing process in metallurgy. It allows worse moves occasionally to escape local minima, making it well-suited for TSP and other complex optimization problems.
-
-- **`helpers.py`**  
-  Provides utility functions and shared logic used across multiple algorithms such as heuristic calculations, path cost computations, and neighbor generation.
+- **`alphabeta.py`**  
+  Implements the Alpha-Beta Pruning optimization over the Minimax algorithm. It avoids exploring branches that won't affect the final decision, dramatically reducing the number of nodes evaluated. This makes it more efficient and scalable to deeper search depths compared to plain Minimax.
 
 - **`__init__.py`**  
-  Makes the directory a Python package, allowing easy imports from `search_algo` in other parts of the codebase (e.g., `from search_algo import dfbnb`).
+  Makes the directory a Python package, allowing easy imports from `algorithms` in other parts of the codebase (e.g., `from algorithms.minimax import minimax`).
 
-These implementations are modular and designed to work with various environments defined in `environment.py`, supporting experiments in grid-based navigation and TSP optimization.
+These game-playing algorithms are designed to work with the gym-chess environment and can be easily extended to other turn-based board games. They use evaluation functions to score board states and determine the most strategic moves for the AI.
 
 ## Conclusion
 
-This project demonstrates the application of both classical search algorithms and modern optimization techniques across different environments. Through experiments and visualizations, it highlights the strengths, limitations, and performance trade-offs of each approach.
+This project showcases the use of classical game-playing algorithms — Minimax and Alpha-Beta Pruning — in a complex environment like chess. Through strategic evaluations and search-tree optimizations, it emphasizes how intelligent decision-making can be modeled and improved through algorithmic design.
 
-Whether you're navigating a frozen grid or optimizing a TSP route, this repo serves as a comprehensive educational resource for understanding and comparing:
+Whether you're simulating a full-depth minimax strategy or pruning unnecessary branches for speed, this repository serves as a hands-on resource for understanding and comparing:
 
-- Informed vs uninformed search strategies
-- Greedy local search vs probabilistic exploration
-- Time and cost efficiency of different algorithms
+- Exhaustive vs optimized game-tree exploration
+- Trade-offs between accuracy and efficiency
+- Impact of search depth and heuristics in adversarial settings
 
-Feel free to explore, modify, and extend the implementations for your own experiments or learning purposes.
+Feel free to explore, experiment, and build upon this project to deepen your understanding of AI in strategic game environments.
 
 ---
 
